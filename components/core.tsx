@@ -24,7 +24,7 @@ export const Core = () => (
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="gap-4 w-full sm:w-auto" asChild>
               <Link
-                href="https://in.linkedin.com/in/keshav-sundararaman-21a176210"
+                href="https://www.linkedin.com/in/keshav-sundararaman-48890a37a/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
