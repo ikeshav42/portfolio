@@ -4,15 +4,13 @@ import { GraduationCap, Code, Briefcase, Star } from "lucide-react";
 const PortfolioDetails = () => {
   return (
     <div className="h-full overflow-y-auto pr-4 space-y-6">
+      {/* About Me Section */}
       <section>
         <p className="mt-10 text-lg text-muted-foreground">
-          Hi, I’m Keshav, a Computer Science and Engineering under-graduate with
-          a passion for technology, innovation, and continuous learning. My
-          journey into the world of tech began with my first smartphone and
-          iPad, sparking an interest that grew into a dedicated pursuit of
-          knowledge and problem solving.
+          Hi, I’m Keshav, a Computer Science graduate student at the University of Texas at Arlington (Fall 2025). I’m passionate about technology, innovation, and continuous learning. My interests span data engineering, software development, cloud computing, and AI research. I thrive in collaborative environments, enjoy solving complex problems, and love developing projects that have tangible, real-world impact. I’m excited to contribute to research initiatives, build scalable software solutions, and continuously expand my technical and analytical skills.
         </p>
       </section>
+
       {/* Education Section */}
       <section>
         <div className="flex items-stretch gap-2 mb-4">
@@ -22,27 +20,27 @@ const PortfolioDetails = () => {
         <div className="space-y-4">
           <div>
             <h3 className="font-semibold text-lg">
-              Bachelor of Technology in Computer Science and Engineering
+              Master of Science in Computer Science
             </h3>
             <p className="text-muted-foreground">
-              Amrita Vishwa Vidyapeetham | 2020 - 2024
+              University of Texas at Arlington | Aug 2025 - May 2027 (Expected)
             </p>
             <p className="mt-2">
-              Relevant Coursework: Data Structures, Algorithms, Machine
-              Learning, Database Management Systems, Computer Networks, Software
-              development, Problem solving
+              Focus: Data Engineering, Software Development, Algorithms, and Cloud Computing
             </p>
           </div>
         </div>
         <br />
         <div className="space-y-4">
           <div>
-            <h3 className="font-semibold text-lg">High School</h3>
+            <h3 className="font-semibold text-lg">
+              Bachelor of Technology in Computer Science and Engineering
+            </h3>
             <p className="text-muted-foreground">
-              St. Michaels Academy | 2018 - 2020
+              Amrita Vishwa Vidyapeetham | 2020 - 2024
             </p>
             <p className="mt-2">
-              Relevant Coursework: Object Oriented Programming and Java
+              Relevant Coursework: Data Structures, Algorithms, Machine Learning, Database Management Systems, Computer Networks, Software Development, Problem Solving
             </p>
           </div>
         </div>
@@ -63,13 +61,15 @@ const PortfolioDetails = () => {
             "Next.js",
             "TypeScript",
             "Node.js",
+            "SQL",
+            "MongoDB",
             "HTML/CSS",
             "Tailwind CSS",
             "Git",
             "Docker",
+            "AWS (S3, Redshift, Lambda, Glue)",
+            "GCP (BigQuery, Dataflow, Pub/Sub)",
             "Machine Learning",
-            "SQL",
-            "MongoDB",
           ].map((skill) => (
             <span
               key={skill}
@@ -80,6 +80,7 @@ const PortfolioDetails = () => {
           ))}
         </div>
       </section>
+
       {/* Projects Section */}
       <section>
         <div className="flex items-center gap-2 mb-4">
@@ -91,7 +92,7 @@ const PortfolioDetails = () => {
             {
               name: "Ensemble Dynamic Structured Grammatical Evolution",
               description:
-                "Constructed Ensemble ML models using Grammatical Evolution and designed a grammar to generate ensemble components. Structured these models into a meta-model that evolves through each generation. Resulted in custom ensemble models outperforming state-of-the-art solutions.",
+                "Constructed ensemble ML models using Grammatical Evolution and designed a grammar to generate ensemble components. Structured these models into a meta-model that evolves through each generation, outperforming standard solutions.",
               technologies: ["Python", "SkLearn", "Numpy", "Sqlite", "PyTest"],
               link: "https://github.com/ikeshav42/DSGE",
             },
@@ -162,6 +163,7 @@ const PortfolioDetails = () => {
             "Open Source",
             "Cloud Computing",
             "Data Science",
+            "Collaboration & Research",
           ].map((interest) => (
             <span
               key={interest}
@@ -177,3 +179,4 @@ const PortfolioDetails = () => {
 };
 
 export default PortfolioDetails;
+
