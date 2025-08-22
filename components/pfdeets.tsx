@@ -7,7 +7,7 @@ const PortfolioDetails = () => {
       {/* About Me Section */}
       <section>
         <p className="mt-10 text-lg text-muted-foreground">
-          Hi, I’m Keshav, a Computer Science graduate student at the University of Texas at Arlington (Fall 2025). I’m passionate about technology, innovation, and continuous learning. My interests span data engineering, software development, cloud computing, and AI research. I thrive in collaborative environments, enjoy solving complex problems, and love developing projects that have tangible, real-world impact. I’m excited to contribute to research initiatives, build scalable software solutions, and continuously expand my technical and analytical skills.
+          Hi, I’m Keshav, a Computer Science graduate student at the University of Texas at Arlington (Fall 2025). I’m passionate about technology, innovation and continuous learning. My interests span data engineering, software development, cloud computing and AI research. I thrive in collaborative environments, enjoy solving complex problems and love developing projects that have a real-world impact. I’m excited to contribute to research initiatives, build scalable software solutions and continuously expand my technical and analytical skills.
         </p>
       </section>
 
@@ -26,7 +26,7 @@ const PortfolioDetails = () => {
               University of Texas at Arlington | Aug 2025 - May 2027 (Expected)
             </p>
             <p className="mt-2">
-              Focus: Data Engineering, Software Development, Algorithms, and Cloud Computing
+              Focus: Data Engineering, Software Development and Algorithms
             </p>
           </div>
         </div>
@@ -40,7 +40,7 @@ const PortfolioDetails = () => {
               Amrita Vishwa Vidyapeetham | 2020 - 2024
             </p>
             <p className="mt-2">
-              Relevant Coursework: Data Structures, Algorithms, Machine Learning, Database Management Systems, Computer Networks, Software Development, Problem Solving
+              Relevant Coursework: Data Structures, Algorithms, Machine Learning, Database Management Systems, Computer Networks, Software Development and Cloud Computing
             </p>
           </div>
         </div>
@@ -67,8 +67,7 @@ const PortfolioDetails = () => {
             "Tailwind CSS",
             "Git",
             "Docker",
-            "AWS (S3, Redshift, Lambda, Glue)",
-            "GCP (BigQuery, Dataflow, Pub/Sub)",
+            "Fundamental AWS and GCP",
             "Machine Learning",
           ].map((skill) => (
             <span
@@ -93,7 +92,7 @@ const PortfolioDetails = () => {
               name: "Ensemble Dynamic Structured Grammatical Evolution",
               description:
                 "Constructed ensemble ML models using Grammatical Evolution and designed a grammar to generate ensemble components. Structured these models into a meta-model that evolves through each generation, outperforming standard solutions.",
-              technologies: ["Python", "SkLearn", "Numpy", "Sqlite", "PyTest"],
+              technologies: ["Python", "SkLearn", "Numpy", "Pandas","Grammar parsing"],
               link: "https://github.com/ikeshav42/DSGE",
             },
             {
@@ -157,13 +156,13 @@ const PortfolioDetails = () => {
         </div>
         <div className="flex flex-wrap gap-2">
           {[
+            "Data Engineering",
             "Machine Learning",
             "AI Safety",
             "Web Development",
             "Open Source",
             "Cloud Computing",
-            "Data Science",
-            "Collaboration & Research",
+            "Software Development",
           ].map((interest) => (
             <span
               key={interest}
