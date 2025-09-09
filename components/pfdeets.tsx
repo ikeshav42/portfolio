@@ -163,6 +163,7 @@ const PortfolioDetails = () => {
             "Open Source",
             "Cloud Computing",
             "Software Development",
+            "Mobile App Development",
           ].map((interest) => (
             <span
               key={interest}
