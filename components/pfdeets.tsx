@@ -26,7 +26,7 @@ const PortfolioDetails = () => {
               University of Texas at Arlington | Aug 2025 - May 2027 (Expected)
             </p>
             <p className="mt-2">
-              Focus: Data Engineering, Software Development and Algorithms
+              Focus: Data Engineering, Algorithms and Machine Learning
             </p>
           </div>
         </div>
@@ -69,20 +69,6 @@ const PortfolioDetails = () => {
             "Docker",
             "Fundamental AWS and GCP",
             "Machine Learning",
-          ,
-            {
-              name: "Sony Research Assistant – Image Processing & Data Pipelines",
-              description:
-                "Contributed to research-focused development involving real-time image processing, segmentation, and embedded C workflows. Built and optimized Python data pipelines for handling continuous data streams and supported experimentation for early-stage prototype systems.",
-              technologies: [
-                "Python",
-                "Embedded C",
-                "Image Processing",
-                "Data Pipelines",
-                "Segmentation"
-              ],
-              link: ""
-            }
           ].map((skill) => (
             <span
               key={skill}
@@ -93,7 +79,31 @@ const PortfolioDetails = () => {
           ))}
         </div>
       </section>
-
+      <section>
+<div className="flex items-center gap-2 mb-4">
+<Briefcase className="w-6 h-6" />
+<h2 className="text-2xl font-semibold">Experience</h2>
+</div>
+<div className="space-y-4">
+<div className="border-b pb-4">
+<h3 className="font-semibold text-lg">Research Assistant</h3>
+<p className="text-muted-foreground">Amrita Vishwa Vidyapeetham with Sony India | May 2023 – Dec 2023</p>
+<p className="mt-2 text-muted-foreground">
+Worked on research-driven development involving real-time image processing, segmentation, and embedded C workflows. Built and optimized Python-based data pipelines for continuous network-stream data used in early ML experiments. Supported experimentation, reproducibility workflows, and internal presentations summarizing insights and technical findings.
+</p>
+<div className="flex flex-wrap gap-2 mt-2">
+{["Python", "Embedded C", "Image Processing", "Data Pipelines", "Segmentation"].map((tech) => (
+<span
+key={tech}
+className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
+>
+{tech}
+</span>
+))}
+</div>
+</div>
+</div>
+</section>
       {/* Projects Section */}
       <section>
         <div className="flex items-center gap-2 mb-4">
@@ -106,7 +116,7 @@ const PortfolioDetails = () => {
               name: "Ensemble Dynamic Structured Grammatical Evolution",
               description:
                 "Constructed ensemble ML models using Grammatical Evolution and designed a grammar to generate ensemble components. Structured these models into a meta-model that evolves through each generation, outperforming standard solutions.",
-              technologies: ["Python", "SkLearn", "Numpy", "Pandas", "Grammar parsing"],
+              technologies: ["Python", "SkLearn", "Numpy", "Pandas","Grammar parsing"],
               link: "https://github.com/ikeshav42/DSGE",
             },
             {
