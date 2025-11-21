@@ -147,19 +147,6 @@ const PortfolioDetails = () => {
               ],
               link: "https://github.com/ikeshav42/GLMS",
             },
-            {
-              name: "Sony Research Assistant – Image Processing & Data Pipelines",
-              description:
-                "Contributed to research-focused development involving real-time image processing, segmentation, and embedded C workflows. Built and optimized Python data pipelines for handling continuous data streams and supported experimentation for early-stage prototype systems.",
-              technologies: [
-                "Python",
-                "Embedded C",
-                "Image Processing",
-                "Data Pipelines",
-                "Segmentation"
-              ],
-              link: ""
-            }
           ].map((project) => (
             <div key={project.name} className="border-b pb-4 last:border-b-0">
               <h3 className="font-semibold text-lg">
