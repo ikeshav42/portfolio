@@ -79,31 +79,34 @@ const PortfolioDetails = () => {
           ))}
         </div>
       </section>
+
+      {/* Experience Section */}
       <section>
-<div className="flex items-center gap-2 mb-4">
-<Briefcase className="w-6 h-6" />
-<h2 className="text-2xl font-semibold">Experience</h2>
-</div>
-<div className="space-y-4">
-<div className="border-b pb-4">
-<h3 className="font-semibold text-lg">Research Assistant</h3>
-<p className="text-muted-foreground">Amrita Vishwa Vidyapeetham with Sony India | May 2023 – Dec 2023</p>
-<p className="mt-2 text-muted-foreground">
-Worked on research-driven development involving real-time image processing, segmentation, and embedded C workflows. Built and optimized Python-based data pipelines for continuous network-stream data used in early ML experiments. Supported experimentation, reproducibility workflows, and internal presentations summarizing insights and technical findings.
-</p>
-<div className="flex flex-wrap gap-2 mt-2">
-{["Python", "Embedded C", "Image Processing", "Data Pipelines", "Segmentation"].map((tech) => (
-<span
-key={tech}
-className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
->
-{tech}
-</span>
-))}
-</div>
-</div>
-</div>
-</section>
+        <div className="flex items-center gap-2 mb-4">
+          <Briefcase className="w-6 h-6" />
+          <h2 className="text-2xl font-semibold">Experience</h2>
+        </div>
+        <div className="space-y-4">
+          <div className="border-b pb-4">
+            <h3 className="font-semibold text-lg">Research Assistant</h3>
+            <p className="text-muted-foreground">Amrita Vishwa Vidyapeetham with Sony India | May 2023 – Dec 2023</p>
+            <p className="mt-2 text-muted-foreground">
+              Worked on research-driven development involving real-time image processing, segmentation, and embedded C workflows. Built and optimized Python-based data pipelines for continuous network-stream data used in early ML experiments. Supported experimentation, reproducibility workflows, and internal presentations summarizing insights and technical findings.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-2">
+              {["Python", "Embedded C", "Image Processing", "Data Pipelines", "Segmentation"].map((tech) => (
+                <span
+                  key={tech}
+                  className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section>
         <div className="flex items-center gap-2 mb-4">
@@ -144,11 +147,24 @@ className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs
               ],
               link: "https://github.com/ikeshav42/GLMS",
             },
+            {
+              name: "Sony Research Assistant – Image Processing & Data Pipelines",
+              description:
+                "Contributed to research-focused development involving real-time image processing, segmentation, and embedded C workflows. Built and optimized Python data pipelines for handling continuous data streams and supported experimentation for early-stage prototype systems.",
+              technologies: [
+                "Python",
+                "Embedded C",
+                "Image Processing",
+                "Data Pipelines",
+                "Segmentation"
+              ],
+              link: ""
+            }
           ].map((project) => (
             <div key={project.name} className="border-b pb-4 last:border-b-0">
               <h3 className="font-semibold text-lg">
                 <a
-                  href={project.link}
+                  href={project.link || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline text-primary"
