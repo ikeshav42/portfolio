@@ -17,7 +17,7 @@ export const Core = () => (
               Keshav Sundararaman
             </h1>
             <p className="text-lg sm:text-2xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-              Computer Science and Engineering Undergrad
+              Graduate CS Student
             </p>
           </div>
 
