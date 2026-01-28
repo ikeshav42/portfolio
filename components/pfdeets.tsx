@@ -91,7 +91,7 @@ const PortfolioDetails = () => {
     {/* UTARI */}
     <div className="border-b pb-4">
       <h3 className="font-semibold text-lg">
-        Graduate Research Assistant (Volunteer)
+        Graduate Research Assistant
       </h3>
       <p className="text-muted-foreground">
         UT Arlington Research Institute (UTARI) | Jan 2026 – Present
