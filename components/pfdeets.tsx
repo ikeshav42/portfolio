@@ -81,31 +81,78 @@ const PortfolioDetails = () => {
       </section>
 
       {/* Experience Section */}
-      <section>
-        <div className="flex items-center gap-2 mb-4">
-          <Briefcase className="w-6 h-6" />
-          <h2 className="text-2xl font-semibold">Experience</h2>
-        </div>
-        <div className="space-y-4">
-          <div className="border-b pb-4">
-            <h3 className="font-semibold text-lg">Research Assistant</h3>
-            <p className="text-muted-foreground">Amrita Vishwa Vidyapeetham with Sony India | May 2023 – Dec 2023</p>
-            <p className="mt-2 text-muted-foreground">
-              Worked on research-driven development involving real-time image processing, segmentation, and embedded C workflows. Built and optimized Python-based data pipelines for continuous network-stream data used in early ML experiments. Supported experimentation, reproducibility workflows, and internal presentations summarizing insights and technical findings.
-            </p>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {["Python", "Embedded C", "Image Processing", "Data Pipelines", "Segmentation"].map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+<section>
+  <div className="flex items-center gap-2 mb-4">
+    <Briefcase className="w-6 h-6" />
+    <h2 className="text-2xl font-semibold">Experience</h2>
+  </div>
+
+  <div className="space-y-6">
+    {/* UTARI */}
+    <div className="border-b pb-4">
+      <h3 className="font-semibold text-lg">
+        Graduate Research Assistant (Volunteer)
+      </h3>
+      <p className="text-muted-foreground">
+        UT Arlington Research Institute (UTARI) | Jan 2026 – Present
+      </p>
+      <p className="mt-2 text-muted-foreground">
+        Working on computer vision and machine learning research focused on
+        positional identification and environment mapping for navigation-related
+        problems. Conduct experiments, analyze results, and collaborate with
+        peers and faculty mentors to evaluate approaches and refine solutions.
+      </p>
+      <div className="flex flex-wrap gap-2 mt-2">
+        {[
+          "Computer Vision",
+          "Machine Learning",
+          "Positioning",
+          "Environment Mapping",
+          "Python",
+          "Experimentation",
+        ].map((tech) => (
+          <span
+            key={tech}
+            className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    {/* Sony */}
+    <div className="border-b pb-4 last:border-b-0">
+      <h3 className="font-semibold text-lg">Research Assistant</h3>
+      <p className="text-muted-foreground">
+        Amrita Vishwa Vidyapeetham with Sony India | May 2023 – Dec 2023
+      </p>
+      <p className="mt-2 text-muted-foreground">
+        Worked on research-driven development involving real-time image
+        processing and embedded C workflows. Built and optimized Python-based
+        data pipelines used in early machine learning experiments and supported
+        experimentation and internal technical presentations.
+      </p>
+      <div className="flex flex-wrap gap-2 mt-2">
+        {[
+          "Python",
+          "Embedded C",
+          "Image Processing",
+          "Data Pipelines",
+          "Experimentation",
+        ].map((tech) => (
+          <span
+            key={tech}
+            className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Projects Section */}
       <section>
