@@ -127,7 +127,7 @@ const PortfolioDetails = () => {
           {/* UTARI — Featured */}
           <div className="border rounded-lg p-4 bg-secondary/40">
             <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
-              <h3 className="font-semibold text-lg">Graduate Research Assistant</h3>
+              <h3 className="font-semibold text-lg">Graduate Research Assistant (Volunteer)</h3>
               <span className="text-sm text-muted-foreground whitespace-nowrap">Jan 2026 – Present</span>
             </div>
             <p className="text-muted-foreground text-sm mb-2">
