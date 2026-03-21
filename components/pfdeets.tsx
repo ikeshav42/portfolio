@@ -28,7 +28,7 @@ const PortfolioDetails = () => {
           <div>
             <h3 className="font-semibold text-lg">Master of Science in Computer Science</h3>
             <p className="text-muted-foreground">
-              University of Texas at Arlington | Aug 2025 – May 2027 (Expected)
+              University of Texas at Arlington | Aug 2025 – May 2027*
             </p>
             <p className="mt-1 text-sm font-medium text-green-600 dark:text-green-400">GPA: 4.0</p>
             <p className="mt-1">Focus: Data Engineering, Algorithms, and Machine Learning</p>
