@@ -9,7 +9,7 @@ const PortfolioDetails = () => {
       <section>
         <p className="mt-10 text-lg text-muted-foreground">
           Hi, I&apos;m Keshav Sundararaman, a Computer Science graduate student at the University of Texas
-          at Arlington. I&apos;m focused on data engineering and applied machine learning — I build
+          at Arlington. I&apos;m focused on data engineering and applied machine learning. I build
           production ETL pipelines, work on computer vision and ML research at UTARI, and enjoy
           projects that bridge clean engineering with real-world impact. I&apos;m actively seeking Summer
           2026 internships in data engineering, ML infrastructure, or backend development where I can
