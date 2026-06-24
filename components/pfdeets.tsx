@@ -8,12 +8,12 @@ const PortfolioDetails = () => {
       {/* About Me Section */}
       <section>
         <p className="mt-10 text-lg text-muted-foreground">
-          Hi, I&apos;m Keshav Sundararaman, a Computer Science graduate student at the University of Texas
-          at Arlington. I&apos;m focused on data engineering and applied machine learning. I build
-          production ETL pipelines, work on computer vision and ML research at UTARI, and enjoy
-          projects that bridge clean engineering with real-world impact. I&apos;m actively seeking Summer
-          2026 internships in data engineering, ML infrastructure, or backend development where I can
-          contribute meaningfully from day one.
+          Hi, I&apos;m Keshav Sundararaman, a Computer Science grad student at UT Arlington. I&apos;ve been
+          getting into data engineering and machine learning lately and I like working on things
+          where I can actually see the data move end to end. I did computer vision research at
+          UTARI earlier this year, and outside of that I&apos;m usually messing around with some side
+          project or another. Looking for internships or full time roles in data engineering, ML
+          infrastructure or backend.
         </p>
       </section>
 
@@ -128,7 +128,7 @@ const PortfolioDetails = () => {
           <div className="border rounded-lg p-4 bg-secondary/40">
             <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
               <h3 className="font-semibold text-lg">Graduate Research Assistant (Volunteer)</h3>
-              <span className="text-sm text-muted-foreground whitespace-nowrap">Jan 2026 – Present</span>
+              <span className="text-sm text-muted-foreground whitespace-nowrap">Jan 2026 – May 2026</span>
             </div>
             <p className="text-muted-foreground text-sm mb-2">
               UT Arlington Research Institute (UTARI)
@@ -197,19 +197,11 @@ const PortfolioDetails = () => {
         <div className="space-y-4">
           {[
             {
-              name: "JobDataset ETL Pipeline",
+              name: "Generating Ensemble ML Pipelines using DSGE",
               description:
-                "Multi-source ETL pipeline scraping internship and job postings from Indeed and LinkedIn. Features a class-based scraper architecture (BaseScraper/IndeedScraper), MD5 fingerprint deduplication, config-driven design, and Supabase/PostgreSQL as the data store. Deployed to a Raspberry Pi with cron scheduling for continuous data collection.",
-              technologies: ["Python", "ETL", "Supabase", "PostgreSQL", "BeautifulSoup", "Cron"],
-              link: "https://github.com/ikeshav42/job-dataset",
-            },
-            {
-              name: "Market Narrative Engine",
-              description:
-                "Streamlit dashboard that scores financial news relevance to stock tickers using GloVe word embeddings. Surfaces the most narratively relevant news for a given stock by computing semantic similarity between headlines and company context.",
-              technologies: ["Python", "GloVe", "Streamlit", "NLP", "Finance"],
-              link: "https://github.com/ikeshav42/market-narrative-engine",
-              demoLink: "https://market-narrative.streamlit.app/",
+                "Undergraduate thesis project designing grammatical representations for ensemble ML pipelines using Dynamic Structured Grammatical Evolution (DSGE). Built Python systems to automatically generate, train, and evaluate pipelines across 50+ datasets, achieving a 15-20% average performance improvement over baselines through controlled experiments, comparative analysis, and ablation studies.",
+              technologies: ["Python", "Grammatical Evolution", "Scikit-learn", "Experimentation"],
+              link: "https://github.com/ikeshav42",
             },
           ].map((project) => (
             <div key={project.name} className="border-b pb-4 last:border-b-0">
