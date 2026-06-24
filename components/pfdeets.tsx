@@ -9,11 +9,11 @@ const PortfolioDetails = () => {
       <section>
         <p className="mt-10 text-lg text-muted-foreground">
           Hi, I&apos;m Keshav Sundararaman, a Computer Science grad student at UT Arlington. I&apos;ve been
-          getting into data engineering and machine learning lately and I like working on things
+          getting into data engineering and machine learning lately, and I like working on things
           where I can actually see the data move end to end. I did computer vision research at
           UTARI earlier this year, and outside of that I&apos;m usually messing around with some side
-          project or another. Looking for internships or full time roles in data engineering, ML
-          infrastructure or backend.
+          project or another. Looking for Summer 2026 internships in data engineering, ML
+          infrastructure, or backend.
         </p>
       </section>
 
@@ -226,16 +226,6 @@ const PortfolioDetails = () => {
                   </span>
                 ))}
               </div>
-              {"demoLink" in project && (
-                <a
-                  href={project.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-2 text-sm text-primary hover:underline"
-                >
-                  Live Demo →
-                </a>
-              )}
             </div>
           ))}
         </div>
