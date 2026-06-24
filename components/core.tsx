@@ -18,7 +18,7 @@ export const Core = () => (
               Graduate CS Student
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4">
             <Button size="lg" className="gap-4 w-full sm:w-auto" asChild>
               <Link
                 href="https://www.linkedin.com/in/keshav-sundararaman-48890a37a/"
