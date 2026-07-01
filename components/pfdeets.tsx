@@ -201,7 +201,7 @@ const PortfolioDetails = () => {
               description:
                 "Live Formula 1 timing dashboard built to explore real-time data engineering. Pulls from the OpenF1 public API via Python serverless functions, caches with Vercel CDN to stay under rate limits, and updates the UI every 4 seconds. Shows driver positions, gaps, sector times, tyre compounds, and pit status during live sessions — plus a full history browser for past grands prix with lap time charts and FIA race control messages.",
               technologies: ["Next.js", "Python", "OpenF1 API", "Recharts", "Tailwind CSS", "Vercel"],
-              link: "https://github.com/ikeshav42/f1-dashboard",
+              link: "https://analyticsf1.vercel.app/",
             },
             {
               name: "Generating Ensemble ML Pipelines using DSGE",
