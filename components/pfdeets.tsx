@@ -197,6 +197,13 @@ const PortfolioDetails = () => {
         <div className="space-y-4">
           {[
             {
+              name: "F1 Live Dashboard",
+              description:
+                "Live Formula 1 timing dashboard built to explore real-time data engineering. Pulls from the OpenF1 public API via Python serverless functions, caches with Vercel CDN to stay under rate limits, and updates the UI every 4 seconds. Shows driver positions, gaps, sector times, tyre compounds, and pit status during live sessions — plus a full history browser for past grands prix with lap time charts and FIA race control messages.",
+              technologies: ["Next.js", "Python", "OpenF1 API", "Recharts", "Tailwind CSS", "Vercel"],
+              link: "https://github.com/ikeshav42/f1-dashboard",
+            },
+            {
               name: "Generating Ensemble ML Pipelines using DSGE",
               description:
                 "Undergraduate thesis project designing grammatical representations for ensemble ML pipelines using Dynamic Structured Grammatical Evolution (DSGE). Built Python systems to automatically generate, train, and evaluate pipelines across 50+ datasets, achieving a 15-20% average performance improvement over baselines through controlled experiments, comparative analysis, and ablation studies.",
