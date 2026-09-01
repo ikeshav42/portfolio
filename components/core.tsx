@@ -46,7 +46,7 @@ export const Core = () => (
                 Read on Medium <Newspaper className="w-4 h-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="gap-4 w-full sm:w-auto" asChild>
+            <Button size="lg" className="gap-4 w-full sm:w-auto" asChild>
               <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 View Resume <FileText className="w-4 h-4" />
               </Link>
