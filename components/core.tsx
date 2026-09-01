@@ -18,8 +18,8 @@ export const Core = () => (
               Graduate CS Student
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-            <Button size="lg" className="gap-4 w-full sm:w-auto" asChild>
+          <div className="grid grid-cols-2 gap-4">
+            <Button size="lg" className="gap-4 w-full" asChild>
               <Link
                 href="https://www.linkedin.com/in/keshav-sundararaman-48890a37a/"
                 target="_blank"
@@ -28,7 +28,7 @@ export const Core = () => (
                 Connect on LinkedIn <Linkedin className="w-4 h-4" />
               </Link>
             </Button>
-            <Button size="lg" className="gap-4 w-full sm:w-auto" asChild>
+            <Button size="lg" className="gap-4 w-full" asChild>
               <Link
                 href="https://github.com/ikeshav42"
                 target="_blank"
@@ -37,7 +37,7 @@ export const Core = () => (
                 View GitHub Profile <Github className="w-4 h-4" />
               </Link>
             </Button>
-            <Button size="lg" className="gap-4 w-full sm:w-auto" asChild>
+            <Button size="lg" className="gap-4 w-full" asChild>
               <Link
                 href="https://medium.com/@ikeshav42"
                 target="_blank"
@@ -46,7 +46,7 @@ export const Core = () => (
                 Read on Medium <Newspaper className="w-4 h-4" />
               </Link>
             </Button>
-            <Button size="lg" className="gap-4 w-full sm:w-auto" asChild>
+            <Button size="lg" className="gap-4 w-full" asChild>
               <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 View Resume <FileText className="w-4 h-4" />
               </Link>

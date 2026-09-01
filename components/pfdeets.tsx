@@ -14,8 +14,8 @@ const PortfolioDetails = () => {
           useful downstream. I also enjoy the data analysis side of things, once the data is
           clean I like digging into it to find what it&apos;s actually saying. I did computer
           vision research at UTARI earlier this year, and outside of that I&apos;m usually messing
-          around with some side project or another. Looking for Summer 2026 internships in data
-          engineering or data analytics.
+          around with some side project or another. Looking for internships or full-time roles in
+          data engineering or data analytics.
         </p>
       </section>
 
@@ -140,7 +140,7 @@ const PortfolioDetails = () => {
               description:
                 "End-to-end ML pipeline predicting abnormal next-day price moves across 505 S&P 500 stocks (619K+ daily OHLCV rows spanning 5 years), engineering 12 no-lookahead features from price and volume history. Used strict time-based train/validation/test splits to prevent data leakage and tuned hyperparameters on validation F1 across four model families. Random Forest performed best (test AUC 0.72, F1 0.31 at a 2% move threshold); used feature importance and L1 sparsification to identify volatility and price-range features as the strongest signals.",
               technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Time-Series Validation", "Feature Engineering"],
-              link: "https://github.com/ikeshav42",
+              link: "https://github.com/ikeshav42/sp500-abnormal-move-prediction",
             },
             {
               name: "F1 Live Dashboard",
@@ -198,15 +198,18 @@ const PortfolioDetails = () => {
               skills: [
                 "ETL Pipelines",
                 "Supabase / PostgreSQL",
-                "BeautifulSoup",
-                "Playwright",
                 "Data Deduplication",
-                "Cron Scheduling",
+                "Dimensional Modeling (in progress)",
+                "ETL/ELT Pipeline Design (in progress)",
+                "Apache Spark / PySpark (in progress)",
+                "Databricks (in progress)",
+                "Delta Lake (in progress)",
+                "Spark Structured Streaming (in progress)",
               ],
             },
             {
               category: "Languages",
-              skills: ["Python", "SQL", "JavaScript", "TypeScript", "Java", "Embedded C"],
+              skills: ["Python", "SQL", "JavaScript", "TypeScript", "Java"],
             },
             {
               category: "ML / AI",
@@ -226,7 +229,7 @@ const PortfolioDetails = () => {
                 "Raspberry Pi",
                 "React / Next.js",
                 "Streamlit",
-                "Google Cloud Platform / BigQuery",
+                "Google Cloud Platform / BigQuery (in progress)",
               ],
             },
           ].map(({ category, skills }) => (
@@ -262,8 +265,6 @@ const PortfolioDetails = () => {
             "AI Safety",
             "Open Source",
             "Cloud Computing",
-            "Web Development",
-            "Embedded Systems",
           ].map((interest) => (
             <span
               key={interest}
