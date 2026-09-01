@@ -55,69 +55,6 @@ const PortfolioDetails = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section>
-        <div className="flex items-center gap-2 mb-4">
-          <Code className="w-6 h-6" />
-          <h2 className="text-2xl font-semibold">Technical Skills</h2>
-        </div>
-
-        <div className="space-y-3">
-          {[
-            {
-              category: "Data Engineering",
-              skills: [
-                "ETL Pipelines",
-                "Supabase / PostgreSQL",
-                "BeautifulSoup",
-                "Playwright",
-                "Data Deduplication",
-                "Cron Scheduling",
-              ],
-            },
-            {
-              category: "Languages",
-              skills: ["Python", "SQL", "JavaScript", "TypeScript", "Java", "Embedded C"],
-            },
-            {
-              category: "ML / AI",
-              skills: [
-                "Computer Vision",
-                "GloVe Embeddings",
-                "Scikit-learn",
-                "NumPy / Pandas",
-                "Grammatical Evolution",
-              ],
-            },
-            {
-              category: "Tools & Infrastructure",
-              skills: [
-                "Git / GitHub",
-                "Docker",
-                "Raspberry Pi",
-                "React / Next.js",
-                "Streamlit",
-                "Google Cloud Platform / BigQuery",
-              ],
-            },
-          ].map(({ category, skills }) => (
-            <div key={category}>
-              <p className="text-sm font-semibold text-muted-foreground mb-1">{category}</p>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-sm"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Experience Section */}
       <section>
         <div className="flex items-center gap-2 mb-4">
@@ -239,6 +176,69 @@ const PortfolioDetails = () => {
                     className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
                   >
                     {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section>
+        <div className="flex items-center gap-2 mb-4">
+          <Code className="w-6 h-6" />
+          <h2 className="text-2xl font-semibold">Technical Skills</h2>
+        </div>
+
+        <div className="space-y-3">
+          {[
+            {
+              category: "Data Engineering",
+              skills: [
+                "ETL Pipelines",
+                "Supabase / PostgreSQL",
+                "BeautifulSoup",
+                "Playwright",
+                "Data Deduplication",
+                "Cron Scheduling",
+              ],
+            },
+            {
+              category: "Languages",
+              skills: ["Python", "SQL", "JavaScript", "TypeScript", "Java", "Embedded C"],
+            },
+            {
+              category: "ML / AI",
+              skills: [
+                "Computer Vision",
+                "GloVe Embeddings",
+                "Scikit-learn",
+                "NumPy / Pandas",
+                "Grammatical Evolution",
+              ],
+            },
+            {
+              category: "Tools & Infrastructure",
+              skills: [
+                "Git / GitHub",
+                "Docker",
+                "Raspberry Pi",
+                "React / Next.js",
+                "Streamlit",
+                "Google Cloud Platform / BigQuery",
+              ],
+            },
+          ].map(({ category, skills }) => (
+            <div key={category}>
+              <p className="text-sm font-semibold text-muted-foreground mb-1">{category}</p>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-sm"
+                  >
+                    {skill}
                   </span>
                 ))}
               </div>
