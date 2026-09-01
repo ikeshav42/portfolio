@@ -9,11 +9,13 @@ const PortfolioDetails = () => {
       <section>
         <p className="mt-10 text-lg text-muted-foreground">
           Hi, I&apos;m Keshav Sundararaman, a Computer Science grad student at UT Arlington. I&apos;ve been
-          getting into data engineering and machine learning lately, and I like working on things
-          where I can actually see the data move end to end. I did computer vision research at
-          UTARI earlier this year, and outside of that I&apos;m usually messing around with some side
-          project or another. Looking for Summer 2026 internships in data engineering, ML
-          infrastructure, or backend.
+          getting into data engineering lately, and I like working on things where I can actually
+          see the data move end to end, from raw records to a pipeline that feeds something
+          useful downstream. I also enjoy the data analysis side of things, once the data is
+          clean I like digging into it to find what it&apos;s actually saying. I did computer
+          vision research at UTARI earlier this year, and outside of that I&apos;m usually messing
+          around with some side project or another. Looking for Summer 2026 internships in data
+          engineering or data analytics.
         </p>
       </section>
 
@@ -95,7 +97,7 @@ const PortfolioDetails = () => {
                 "Raspberry Pi",
                 "React / Next.js",
                 "Streamlit",
-                "AWS / GCP (Fundamentals)",
+                "Google Cloud Platform / BigQuery",
               ],
             },
           ].map(({ category, skills }) => (
@@ -197,6 +199,13 @@ const PortfolioDetails = () => {
         <div className="space-y-4">
           {[
             {
+              name: "Abnormal Move Prediction in S&P 500 Stocks",
+              description:
+                "End-to-end ML pipeline predicting abnormal next-day price moves across 505 S&P 500 stocks (619K+ daily OHLCV rows spanning 5 years), engineering 12 no-lookahead features from price and volume history. Used strict time-based train/validation/test splits to prevent data leakage and tuned hyperparameters on validation F1 across four model families. Random Forest performed best (test AUC 0.72, F1 0.31 at a 2% move threshold); used feature importance and L1 sparsification to identify volatility and price-range features as the strongest signals.",
+              technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Time-Series Validation", "Feature Engineering"],
+              link: "https://github.com/ikeshav42",
+            },
+            {
               name: "F1 Live Dashboard",
               description:
                 "Live Formula 1 timing dashboard built to explore real-time data engineering. Pulls from the OpenF1 public API via Python serverless functions, caches with Vercel CDN to stay under rate limits, and updates the UI every 4 seconds. Shows driver positions, gaps, sector times, tyre compounds, and pit status during live sessions — plus a full history browser for past grands prix with lap time charts and FIA race control messages.",
@@ -247,6 +256,7 @@ const PortfolioDetails = () => {
         <div className="flex flex-wrap gap-2">
           {[
             "Data Engineering",
+            "Data Analysis",
             "ML Infrastructure",
             "Computer Vision",
             "AI Safety",
