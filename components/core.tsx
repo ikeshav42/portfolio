@@ -8,7 +8,7 @@ export const Core = () => (
   <div className="w-full py-12 sm:py-20 lg:py-40">
     <div className="container mx-auto px-10">
       <div className="grid grid-cols-1 gap-12 items-start lg:grid-cols-2">
-        <div className="flex gap-6 flex-col sticky lg:self-start lg:top-1/4">
+        <div className="flex gap-6 flex-col sticky self-start top-4 lg:top-1/4">
           <HelloLanguages />
           <div className="flex gap-4 flex-col">
             <h1 className="text-4xl sm:text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular">
