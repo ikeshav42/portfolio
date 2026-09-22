@@ -8,7 +8,7 @@ export const Core = () => (
   <div className="w-full py-12 sm:py-20 lg:py-40">
     <div className="container mx-auto px-10">
       <div className="grid grid-cols-1 gap-12 items-start lg:grid-cols-2">
-        <div className="flex gap-6 flex-col sticky self-start top-4 lg:top-1/4">
+        <div className="flex gap-6 flex-col lg:sticky lg:self-start lg:top-1/4">
           <HelloLanguages />
           <div className="flex gap-4 flex-col">
             <h1 className="text-4xl sm:text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular">
@@ -19,36 +19,36 @@ export const Core = () => (
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <Button size="lg" className="gap-4 w-full" asChild>
+            <Button size="lg" className="gap-2 w-full h-auto whitespace-normal text-center py-3 px-4" asChild>
               <Link
                 href="https://www.linkedin.com/in/keshav-sundararaman-48890a37a/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Connect on LinkedIn <Linkedin className="w-4 h-4" />
+                Connect on LinkedIn <Linkedin className="w-4 h-4 shrink-0" />
               </Link>
             </Button>
-            <Button size="lg" className="gap-4 w-full" asChild>
+            <Button size="lg" className="gap-2 w-full h-auto whitespace-normal text-center py-3 px-4" asChild>
               <Link
                 href="https://github.com/ikeshav42"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View GitHub Profile <Github className="w-4 h-4" />
+                View GitHub Profile <Github className="w-4 h-4 shrink-0" />
               </Link>
             </Button>
-            <Button size="lg" className="gap-4 w-full" asChild>
+            <Button size="lg" className="gap-2 w-full h-auto whitespace-normal text-center py-3 px-4" asChild>
               <Link
                 href="https://medium.com/@ikeshav42"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Read on Medium <Newspaper className="w-4 h-4" />
+                Read on Medium <Newspaper className="w-4 h-4 shrink-0" />
               </Link>
             </Button>
-            <Button size="lg" className="gap-4 w-full" asChild>
+            <Button size="lg" className="gap-2 w-full h-auto whitespace-normal text-center py-3 px-4" asChild>
               <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                View Resume <FileText className="w-4 h-4" />
+                View Resume <FileText className="w-4 h-4 shrink-0" />
               </Link>
             </Button>
           </div>
