@@ -15,7 +15,7 @@ export const Core = () => (
               Keshav Sundararaman
             </h1>
             <p className="text-lg sm:text-2xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-              Graduate CS Student
+              Graduate CS Student · Data &amp; Analytics
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -46,7 +46,11 @@ export const Core = () => (
                 Read on Medium <Newspaper className="w-4 h-4 shrink-0" />
               </Link>
             </Button>
-            <Button size="lg" className="gap-2 w-full h-auto whitespace-normal text-center py-3 px-4" asChild>
+            <Button
+              size="lg"
+              className="gap-2 w-full h-auto whitespace-normal text-center py-3 px-4 shadow-[0_0_0_3px_rgba(99,102,241,0.5),0_0_25px_8px_rgba(99,102,241,0.55)] hover:shadow-[0_0_0_3px_rgba(99,102,241,0.6),0_0_30px_10px_rgba(99,102,241,0.7)] dark:shadow-[0_0_0_3px_rgba(59,130,246,0.5),0_0_25px_8px_rgba(59,130,246,0.55)] dark:hover:shadow-[0_0_0_3px_rgba(59,130,246,0.6),0_0_30px_10px_rgba(59,130,246,0.7)] transition-shadow"
+              asChild
+            >
               <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 View Resume <FileText className="w-4 h-4 shrink-0" />
               </Link>

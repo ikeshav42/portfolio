@@ -1,5 +1,5 @@
 import React from "react";
-import { User, GraduationCap, Code, Briefcase, FlaskConical, ExternalLink } from "lucide-react";
+import { User, GraduationCap, Code, Briefcase, FlaskConical, ExternalLink, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PortfolioDetails = () => {
@@ -13,10 +13,10 @@ const PortfolioDetails = () => {
           <h2 className="text-2xl font-semibold">About</h2>
         </div>
         <ul className="text-lg text-muted-foreground list-disc pl-5 space-y-1">
-          <li>CS grad student at UT Arlington, graduating May 2027</li>
-          <li>Targeting data engineering and analytics engineering roles</li>
-          <li>Into building things end to end — pipelines, dashboards, and the occasional Chrome extension</li>
-          <li>Open to internships and full-time roles (F1 OPT eligible)</li>
+          <li>CS grad student at UT Arlington (4.0 GPA), focusing on data engineering and analytics.</li>
+          <li>Experienced in building reliable pipelines, structured sensor ingestion, and reproducible ML workflows in Python and SQL.</li>
+          <li>Shipped BestPick (live Chrome extension comparing variant pricing) and built end-to-end time-series ML models over 619K+ market records.</li>
+          <li>Open to internships and full-time roles (F1 OPT eligible).</li>
         </ul>
       </section>
 
@@ -35,6 +35,14 @@ const PortfolioDetails = () => {
             </p>
             <p className="mt-1 text-sm font-semibold text-green-700 dark:text-green-400">GPA: 4.0</p>
             <p className="mt-1">Focus: Data Engineering, Machine Learning</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Coursework:</span> Data Engineering
+              for Business Applications, Database Systems, Machine Learning, Pattern Recognition
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Certifications:</span> Google Cloud
+              Data Analytics Certificate (in progress), Stanford ML Specialization (Coursera)
+            </p>
           </div>
         </div>
 
@@ -43,7 +51,7 @@ const PortfolioDetails = () => {
         <div className="space-y-4">
           <div>
             <h3 className="font-semibold text-lg">
-              Bachelor of Technology in Computer Science
+              Bachelor of Technology in Computer Science and Engineering
             </h3>
             <p className="text-muted-foreground">
               Amrita Vishwa Vidyapeetham | 2020 – 2024
@@ -64,17 +72,19 @@ const PortfolioDetails = () => {
           {/* UTARI — Featured */}
           <div className="border rounded-lg p-4 bg-secondary/40">
             <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
-              <h3 className="font-semibold text-lg">Graduate Research Assistant (Volunteer)</h3>
+              <h3 className="font-semibold text-lg">Graduate Research Assistant</h3>
               <span className="text-sm text-muted-foreground whitespace-nowrap">Jan 2026 – May 2026</span>
             </div>
             <p className="text-muted-foreground text-sm mb-2">
               UT Arlington Research Institute (UTARI)
             </p>
             <p className="text-muted-foreground">
-              Built a data pipeline processing RGB and depth sensor streams from ROS bag files
-              through detection (YOLO-World), segmentation (MobileSAM), and depth projection
-              stages into 3D maps for robot perception. Profiled and optimized throughput from
-              under 10 fps to around 25 fps by switching the detection stage.
+              Built an asynchronous data pipeline to synchronize multi-modal RGB and depth sensor
+              streams from ROS bag files for 3D spatial mapping. Profiled computational
+              bottlenecks across pipeline stages; transitioned detection from GroundingDINO to
+              YOLO-World, boosting frame throughput from under 10 fps to 25 fps (+150%). Built
+              modular CLI tools exporting structured JSON summaries, 2D floor plans, and ROS2
+              Nav2 maps.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
               {[
@@ -83,6 +93,9 @@ const PortfolioDetails = () => {
                 "Environment Mapping",
                 "Python",
                 "Experimentation",
+                "Data Pipelines",
+                "Performance Profiling",
+                "JSON Data Export",
               ].map((tech) => (
                 <span
                   key={tech}
@@ -104,11 +117,14 @@ const PortfolioDetails = () => {
               Amrita Vishwa Vidyapeetham × Sony India
             </p>
             <p className="text-muted-foreground">
-              Collected embedded hardware sensor data over network interfaces, processed it into
-              structured datasets, and analyzed food drying behavior for project stakeholders.
+              Built automated network scripts to continuously ingest raw IoT sensor readings into
+              structured tabular datasets. Cleaned and validated multi-sensor experimental logs
+              in Pandas to eliminate sensor noise, drift, and missing entries. Analyzed food
+              drying behavior across sensor runs and presented analytical findings and
+              Matplotlib charts directly to Sony representatives and project leads.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              {["Python", "Structured Datasets", "Stakeholder Communication", "Image Processing", "Data Pipelines", "Experimentation"].map(
+              {["Python", "Structured Datasets", "Stakeholder Communication", "Image Processing", "Data Pipelines", "Experimentation", "EDA", "Matplotlib", "IoT Ingestion"].map(
                 (tech) => (
                   <span
                     key={tech}
@@ -225,41 +241,44 @@ const PortfolioDetails = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
           {[
             {
-              category: "Current Stack",
+              category: "Languages & Querying",
+              skills: ["Python", "SQL (CTEs, Window Functions)", "JavaScript", "TypeScript", "Bash"],
+            },
+            {
+              category: "Data Systems, Warehousing & BI",
               skills: [
-                "Python",
-                "SQL",
-                "JavaScript",
-                "TypeScript",
-                "Pandas",
-                "NumPy",
-                "Matplotlib",
-                "Scikit-learn",
-                "PyTorch (foundational)",
-                "Git",
-                "Linux",
-                "Docker",
-                "GCP",
+                "Google Cloud Platform",
                 "BigQuery",
-                "ETL Pipelines",
-                "Data Deduplication",
-                "Supabase / PostgreSQL",
-                "React / Next.js",
+                "Relational Database Design",
+                "PostgreSQL / Supabase",
+                "Databricks",
+                "Apache Spark",
+                "Delta Lake",
+                "Matplotlib",
+                "Excel",
                 "Streamlit",
               ],
             },
             {
-              category: "In Progress",
+              category: "Data Engineering & Modeling",
               skills: [
-                "Databricks",
-                "Apache Spark",
-                "PySpark",
-                "Delta Lake",
+                "ETL/ELT Pipelines",
                 "Medallion Architecture",
-                "Dimensional Modeling",
-                "ETL/ELT Pipeline Design",
-                "Spark Structured Streaming",
-                "Google Cloud Data Analytics Certificate",
+                "Data Cleaning & Deduplication",
+                "Dimensional Modeling (in progress)",
+                "REST APIs",
+              ],
+            },
+            {
+              category: "Machine Learning & Tools",
+              skills: [
+                "Scikit-learn",
+                "Feature Engineering",
+                "PyTorch (foundational)",
+                "Git",
+                "Linux",
+                "Docker",
+                "React / Next.js",
               ],
             },
           ].map(({ category, skills }) => (
@@ -278,6 +297,33 @@ const PortfolioDetails = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Leadership & Activities Section */}
+      <section>
+        <div className="flex items-center gap-2 mb-4">
+          <Award className="w-6 h-6" />
+          <h2 className="text-2xl font-semibold">Leadership &amp; Activities</h2>
+        </div>
+        <ul className="text-muted-foreground list-disc pl-5 space-y-2">
+          <li>
+            <span className="font-medium text-foreground">
+              Honeywell Smart City Hackathon Finalist (Top 20 in India, 2021):
+            </span>{" "}
+            Prototyped an assistive smart-city product solution engineered to improve urban
+            accessibility for people with disabilities.
+          </li>
+          <li>
+            <span className="font-medium text-foreground">ACM Student Chapter Member:</span>{" "}
+            Participated in peer programming workshops, technical sessions, and student
+            developer events.
+          </li>
+          <li>
+            <span className="font-medium text-foreground">Technical Writing:</span> Publish
+            technical guides and breakdowns on Medium (@ikeshav42) covering data engineering
+            workflows, Python tooling, and analytical concepts.
+          </li>
+        </ul>
       </section>
 
     </div>
