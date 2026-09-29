@@ -180,6 +180,14 @@ const PortfolioDetails = () => {
                 { label: "Live Dashboard", href: "https://analyticsf1.vercel.app/" },
               ],
             },
+            {
+              name: "Label-Efficiency Study on Satellite Imagery",
+              description:
+                "Comparing three pretrained vision backbones (ResNet-50, CLIP, DINOv2) as frozen feature extractors on EuroSAT, measuring how classification accuracy scales with labels-per-class to find where a trained probe overtakes zero-shot transfer. Pipeline validated end-to-end at reduced scale.",
+              technologies: ["Python", "ML", "Neural Nets", "Data Analysis"],
+              badge: "In Progress",
+              links: [],
+            },
           ].map((project) => (
             <div key={project.name} className="border-b pb-4 last:border-b-0">
               <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
@@ -217,15 +225,17 @@ const PortfolioDetails = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-2 mt-3">
-                {project.links.map((l) => (
-                  <Button key={l.label} size="sm" className="rounded-full" asChild>
-                    <a href={l.href} target="_blank" rel="noopener noreferrer">
-                      {l.label} <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </Button>
-                ))}
-              </div>
+              {project.links.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {project.links.map((l) => (
+                    <Button key={l.label} size="sm" className="rounded-full" asChild>
+                      <a href={l.href} target="_blank" rel="noopener noreferrer">
+                        {l.label} <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </Button>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
