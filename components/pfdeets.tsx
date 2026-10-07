@@ -1,13 +1,20 @@
 import React from "react";
-import { User, GraduationCap, Code, Briefcase, FlaskConical, ExternalLink, Award } from "lucide-react";
+import { User, GraduationCap, Code, Briefcase, FlaskConical, ExternalLink, Award, LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { dashboards } from "@/lib/dashboards";
+import { ExpandableText } from "@/components/expandable-text";
+import { DashboardList } from "@/components/dashboard-list";
+
+const MAX_DASHBOARDS = 3;
+const ALL_DASHBOARDS_URL = "https://github.com/ikeshav42/bi-dashboards";
+const sortedDashboards = [...dashboards].sort((a, b) => b.date.localeCompare(a.date));
 
 const PortfolioDetails = () => {
   return (
     <div className="h-full overflow-y-auto pr-4 space-y-6">
 
       {/* About Me Section */}
-      <section>
+      <section id="about" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4 mt-10">
           <User className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">About</h2>
@@ -21,48 +28,156 @@ const PortfolioDetails = () => {
       </section>
 
       {/* Education Section */}
-      <section>
+      <section id="education" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4">
           <GraduationCap className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">Education</h2>
         </div>
 
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-semibold text-lg">Master of Science in Computer Science</h3>
-            <p className="text-muted-foreground">
-              University of Texas at Arlington | Aug 2025 – May 2027*
-            </p>
-            <p className="mt-1 text-sm font-semibold text-green-700 dark:text-green-400">GPA: 4.0</p>
-            <p className="mt-1">Focus: Data Engineering, Machine Learning</p>
-            <p className="mt-2 text-sm text-muted-foreground">
+        <div className="space-y-3">
+          <div className="space-y-0.5">
+            <div className="flex flex-wrap items-baseline gap-x-2">
+              <h3 className="font-semibold">Master of Science in Computer Science</h3>
+              <p className="text-sm text-muted-foreground">
+                University of Texas at Arlington | Aug 2025 – May 2027*
+              </p>
+            </div>
+            <div className="flex flex-wrap items-baseline gap-x-4 text-sm">
+              <span className="font-semibold text-green-700 dark:text-green-400">GPA: 4.0</span>
+              <span>Focus: Data Engineering, Machine Learning</span>
+            </div>
+            <p className="text-sm text-muted-foreground">
               <span className="font-medium text-foreground">Coursework:</span> Data Engineering
               for Business Applications, Database Systems, Machine Learning, Pattern Recognition
             </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              <span className="font-medium text-foreground">Certifications:</span> Google Cloud
-              Data Analytics Certificate (in progress), Stanford ML Specialization (Coursera)
+            <p className="text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Certifications:</span> Stanford ML
+              Specialization (Coursera)
             </p>
           </div>
-        </div>
 
-        <br />
-
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-semibold text-lg">
-              Bachelor of Technology in Computer Science and Engineering
-            </h3>
-            <p className="text-muted-foreground">
-              Amrita Vishwa Vidyapeetham | 2020 – 2024
-            </p>
-            <p className="mt-1 text-sm font-medium">CGPA: 8.06 / 10</p>
+          <div className="space-y-0.5">
+            <div className="flex flex-wrap items-baseline gap-x-2">
+              <h3 className="font-semibold">
+                Bachelor of Technology in Computer Science and Engineering
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Amrita Vishwa Vidyapeetham | 2020 – 2024
+              </p>
+            </div>
+            <p className="text-sm font-medium">CGPA: 8.06 / 10</p>
           </div>
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section id="projects" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
+        <div className="flex items-center gap-2 mb-4">
+          <FlaskConical className="w-6 h-6" />
+          <h2 className="text-2xl font-semibold">Projects</h2>
+        </div>
+
+        <div className="space-y-4">
+          {[
+            {
+              name: "BestPick",
+              subtitle: "Chrome Extension",
+              description:
+                "Built a Chrome extension that scans all variants on an Amazon product page and finds the lowest price across every condition — New, Like New, Very Good, Good, and Acceptable. Designed the architecture first, then built it with Claude as a dev partner. Shipped v1.1 within 24 hours of launch adding support for size-and-color variant grids and bundle listings.",
+              technologies: ["JavaScript", "Chrome Extensions", "Manifest V3", "Async/Concurrency", "HTML Parsing"],
+              badge: "Live on Chrome Web Store",
+              links: [
+                { label: "Chrome Web Store", href: "https://chromewebstore.google.com/detail/bestpick/pgfllnifhaeoglmpdafpmmodfalpckln" },
+                { label: "GitHub", href: "https://github.com/ikeshav42/bestpick-chrome-extension" },
+              ],
+            },
+            {
+              name: "Abnormal Move Prediction in S&P 500 Stocks",
+              description:
+                "End-to-end ML pipeline predicting abnormal next-day price moves across 505 S&P 500 stocks (619K+ daily OHLCV rows spanning 5 years), engineering 12 no-lookahead features from price and volume history. Used strict time-based train/validation/test splits to prevent data leakage and tuned hyperparameters on validation F1 across four model families. Random Forest performed best (test AUC 0.72, F1 0.31 at a 2% move threshold); used feature importance and L1 sparsification to identify volatility and price-range features as the strongest signals.",
+              technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Time-Series Validation", "Feature Engineering"],
+              badge: "Published on GitHub",
+              links: [
+                { label: "GitHub", href: "https://github.com/ikeshav42/sp500-abnormal-move-prediction" },
+              ],
+            },
+            {
+              name: "Label-Efficiency Study on Satellite Imagery",
+              description:
+                "Comparing three pretrained vision backbones (ResNet-50, CLIP, DINOv2) as frozen feature extractors on EuroSAT, measuring how classification accuracy scales with labels-per-class to find where a trained probe overtakes zero-shot transfer. Pipeline validated end-to-end at reduced scale.",
+              technologies: ["Python", "ML", "Neural Nets", "Data Analysis"],
+              badge: "In Progress",
+              links: [],
+            },
+          ].map((project) => (
+            <div key={project.name} className="border-b pb-4 last:border-b-0">
+              <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
+                <div>
+                  <h3 className="font-semibold text-lg">{project.name}</h3>
+                  {project.subtitle && (
+                    <p className="text-sm text-muted-foreground">{project.subtitle}</p>
+                  )}
+                </div>
+                {project.badge && (
+                  <span
+                    className={`inline-flex items-center gap-1.5 text-xs font-medium rounded-full px-2 py-1 whitespace-nowrap ${
+                      project.badge === "In Progress"
+                        ? "text-amber-600 dark:text-amber-400 bg-amber-500/10"
+                        : "text-green-600 dark:text-green-400 bg-green-500/10"
+                    }`}
+                  >
+                    <span
+                      className={`w-1.5 h-1.5 rounded-full ${
+                        project.badge === "In Progress" ? "bg-amber-500" : "bg-green-500"
+                      }`}
+                    />
+                    {project.badge}
+                  </span>
+                )}
+              </div>
+              <ExpandableText text={project.description} className="text-muted-foreground mt-1" />
+              <div className="flex flex-wrap gap-2 mt-2">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              {project.links.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {project.links.map((l) => (
+                    <Button key={l.label} size="sm" className="rounded-full" asChild>
+                      <a href={l.href} target="_blank" rel="noopener noreferrer">
+                        {l.label} <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </Button>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* BI Dashboards Section */}
+      <section id="dashboards" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
+        <div className="flex items-center gap-2 mb-1">
+          <LayoutDashboard className="w-6 h-6" />
+          <h2 className="text-2xl font-semibold">BI Dashboards</h2>
+        </div>
+        <p className="text-muted-foreground mb-4">Dashboards I build while learning Power BI.</p>
+
+        <DashboardList
+          items={sortedDashboards.slice(0, MAX_DASHBOARDS)}
+          showAllHref={sortedDashboards.length > MAX_DASHBOARDS ? ALL_DASHBOARDS_URL : undefined}
+        />
+      </section>
+
       {/* Experience Section */}
-      <section>
+      <section id="experience" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4">
           <Briefcase className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">Experience</h2>
@@ -139,110 +254,8 @@ const PortfolioDetails = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section>
-        <div className="flex items-center gap-2 mb-4">
-          <FlaskConical className="w-6 h-6" />
-          <h2 className="text-2xl font-semibold">Projects</h2>
-        </div>
-
-        <div className="space-y-4">
-          {[
-            {
-              name: "BestPick",
-              subtitle: "Chrome Extension",
-              description:
-                "Built a Chrome extension that scans all variants on an Amazon product page and finds the lowest price across every condition — New, Like New, Very Good, Good, and Acceptable. Designed the architecture first, then built it with Claude as a dev partner. Shipped v1.1 within 24 hours of launch adding support for size-and-color variant grids and bundle listings.",
-              technologies: ["JavaScript", "Chrome Extensions", "Manifest V3", "Async/Concurrency", "HTML Parsing"],
-              badge: "Live on Chrome Web Store",
-              links: [
-                { label: "Chrome Web Store", href: "https://chromewebstore.google.com/detail/bestpick/pgfllnifhaeoglmpdafpmmodfalpckln" },
-                { label: "GitHub", href: "https://github.com/ikeshav42/bestpick-chrome-extension" },
-              ],
-            },
-            {
-              name: "Abnormal Move Prediction in S&P 500 Stocks",
-              description:
-                "End-to-end ML pipeline predicting abnormal next-day price moves across 505 S&P 500 stocks (619K+ daily OHLCV rows spanning 5 years), engineering 12 no-lookahead features from price and volume history. Used strict time-based train/validation/test splits to prevent data leakage and tuned hyperparameters on validation F1 across four model families. Random Forest performed best (test AUC 0.72, F1 0.31 at a 2% move threshold); used feature importance and L1 sparsification to identify volatility and price-range features as the strongest signals.",
-              technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Time-Series Validation", "Feature Engineering"],
-              badge: "Published on GitHub",
-              links: [
-                { label: "GitHub", href: "https://github.com/ikeshav42/sp500-abnormal-move-prediction" },
-              ],
-            },
-            {
-              name: "F1 Data Pipeline",
-              description:
-                "F1 data engineering pipeline built on the OpenF1 public API. Ingests raw race data (lap times, pit stops, driver positions, tyre compounds, weather) into a bronze/silver/gold Delta Lake medallion architecture on Databricks. In progress — bronze ingestion layer complete.",
-              technologies: ["Python", "OpenF1 API", "Databricks", "Delta Lake", "Apache Spark", "Medallion Architecture"],
-              badge: "In Progress",
-              links: [
-                { label: "Live Dashboard", href: "https://analyticsf1.vercel.app/" },
-              ],
-            },
-            {
-              name: "Label-Efficiency Study on Satellite Imagery",
-              description:
-                "Comparing three pretrained vision backbones (ResNet-50, CLIP, DINOv2) as frozen feature extractors on EuroSAT, measuring how classification accuracy scales with labels-per-class to find where a trained probe overtakes zero-shot transfer. Pipeline validated end-to-end at reduced scale.",
-              technologies: ["Python", "ML", "Neural Nets", "Data Analysis"],
-              badge: "In Progress",
-              links: [],
-            },
-          ].map((project) => (
-            <div key={project.name} className="border-b pb-4 last:border-b-0">
-              <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
-                <div>
-                  <h3 className="font-semibold text-lg">{project.name}</h3>
-                  {project.subtitle && (
-                    <p className="text-sm text-muted-foreground">{project.subtitle}</p>
-                  )}
-                </div>
-                {project.badge && (
-                  <span
-                    className={`inline-flex items-center gap-1.5 text-xs font-medium rounded-full px-2 py-1 whitespace-nowrap ${
-                      project.badge === "In Progress"
-                        ? "text-amber-600 dark:text-amber-400 bg-amber-500/10"
-                        : "text-green-600 dark:text-green-400 bg-green-500/10"
-                    }`}
-                  >
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full ${
-                        project.badge === "In Progress" ? "bg-amber-500" : "bg-green-500"
-                      }`}
-                    />
-                    {project.badge}
-                  </span>
-                )}
-              </div>
-              <p className="text-muted-foreground mt-1">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              {project.links.length > 0 && (
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {project.links.map((l) => (
-                    <Button key={l.label} size="sm" className="rounded-full" asChild>
-                      <a href={l.href} target="_blank" rel="noopener noreferrer">
-                        {l.label} <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </Button>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Skills Section */}
-      <section>
+      <section id="skills" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4">
           <Code className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">Technical Skills</h2>
@@ -266,6 +279,7 @@ const PortfolioDetails = () => {
                 "Delta Lake",
                 "Matplotlib",
                 "Excel",
+                "Power BI (learning)",
                 "Streamlit",
               ],
             },
@@ -310,7 +324,7 @@ const PortfolioDetails = () => {
       </section>
 
       {/* Leadership & Activities Section */}
-      <section>
+      <section id="leadership" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4">
           <Award className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">Leadership &amp; Activities</h2>
