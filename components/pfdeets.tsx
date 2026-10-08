@@ -80,6 +80,16 @@ const PortfolioDetails = () => {
         <div className="space-y-4">
           {[
             {
+              name: "Abnormal Move Prediction in S&P 500 Stocks",
+              description:
+                "End-to-end ML pipeline predicting abnormal next-day price moves across 505 S&P 500 stocks (619K+ daily OHLCV rows spanning 5 years), engineering 12 no-lookahead features from price and volume history. Used strict time-based train/validation/test splits to prevent data leakage and tuned hyperparameters on validation F1 across four model families. Random Forest performed best (test AUC 0.72, F1 0.31 at a 2% move threshold); used feature importance and L1 sparsification to identify volatility and price-range features as the strongest signals.",
+              technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Time-Series Validation", "Feature Engineering"],
+              badge: "Published on GitHub",
+              links: [
+                { label: "GitHub", href: "https://github.com/ikeshav42/sp500-abnormal-move-prediction" },
+              ],
+            },
+            {
               name: "BestPick",
               subtitle: "Chrome Extension",
               description:
@@ -92,13 +102,13 @@ const PortfolioDetails = () => {
               ],
             },
             {
-              name: "Abnormal Move Prediction in S&P 500 Stocks",
+              name: "Claude Networking Tracker",
               description:
-                "End-to-end ML pipeline predicting abnormal next-day price moves across 505 S&P 500 stocks (619K+ daily OHLCV rows spanning 5 years), engineering 12 no-lookahead features from price and volume history. Used strict time-based train/validation/test splits to prevent data leakage and tuned hyperparameters on validation F1 across four model families. Random Forest performed best (test AUC 0.72, F1 0.31 at a 2% move threshold); used feature importance and L1 sparsification to identify volatility and price-range features as the strongest signals.",
-              technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Time-Series Validation", "Feature Engineering"],
+                "A private tracker for LinkedIn connection requests, built to be updated by Claude in one line. It has a blank tracker page, a Claude skill that adds and updates rows with minimal tokens, and a guide to writing short, specific connect notes. Nothing is automated; you send requests yourself and it tracks status and follow-up timing.",
+              technologies: ["HTML", "JavaScript", "Claude skills", "Claude artifacts"],
               badge: "Published on GitHub",
               links: [
-                { label: "GitHub", href: "https://github.com/ikeshav42/sp500-abnormal-move-prediction" },
+                { label: "GitHub", href: "https://github.com/ikeshav42/claude-networking-tracker" },
               ],
             },
             {
