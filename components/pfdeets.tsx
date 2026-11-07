@@ -102,6 +102,16 @@ const PortfolioDetails = () => {
               ],
             },
             {
+              name: "F1 Podium Predictions",
+              description:
+                "Predicts the podium of each 2026 Formula 1 race from qualifying results, recent form, practice pace and weather. For every race it tests 7 scikit-learn models on 43 past races, training on earlier races only, and keeps the best one. The best model picks 2.19 of 3 podium drivers right per race, against 2.07 for “top 3 on the grid”. Each race has its own notebook and a public scorecard, misses included.",
+              technologies: ["Python", "scikit-learn", "XGBoost", "pandas", "OpenF1 API"],
+              badge: "Published on GitHub",
+              links: [
+                { label: "GitHub", href: "https://github.com/ikeshav42/f1-podium-predictions" },
+              ],
+            },
+            {
               name: "Claude Networking Tracker",
               description:
                 "A private tracker for LinkedIn connection requests, built to be updated by Claude in one line. It has a blank tracker page, a Claude skill that adds and updates rows with minimal tokens, and a guide to writing short, specific connect notes. Nothing is automated; you send requests yourself and it tracks status and follow-up timing.",
@@ -342,10 +352,15 @@ const PortfolioDetails = () => {
         <ul className="text-muted-foreground list-disc pl-5 space-y-2">
           <li>
             <span className="font-medium text-foreground">
-              Honeywell Smart City Hackathon Finalist (Top 20 in India, 2021):
+              Honeywell Smart City Hackathon Finalist (Top 20 in India, 2020):
             </span>{" "}
             Prototyped an assistive smart-city product solution engineered to improve urban
             accessibility for people with disabilities.
+          </li>
+          <li>
+            <span className="font-medium text-foreground">WCA Competition Volunteer &amp; Host:</span>{" "}
+            Was an active volunteer and host for World Cube Association (WCA) speedcubing
+            competitions in Tamil Nadu, India.
           </li>
           <li>
             <span className="font-medium text-foreground">ACM Student Chapter Member:</span>{" "}
