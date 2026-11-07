@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Github, Linkedin, Newspaper, FileText } from "lucide-react";
+import { Newspaper, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { GithubIcon, LinkedinIcon } from "@/components/brand-icons";
 import HelloLanguages from "./hellolang";
 import PortfolioDetails from "./pfdeets";
 import { ModeToggle } from "./themetoggle";
@@ -26,7 +27,7 @@ export const Core = () => (
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Connect on LinkedIn <Linkedin className="w-4 h-4 shrink-0" />
+                Connect on LinkedIn <LinkedinIcon className="w-4 h-4 shrink-0" />
               </Link>
             </Button>
             <Button size="lg" className="gap-2 w-full h-auto whitespace-normal text-center py-3 px-4" asChild>
@@ -35,7 +36,7 @@ export const Core = () => (
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View GitHub Profile <Github className="w-4 h-4 shrink-0" />
+                View GitHub Profile <GithubIcon className="w-4 h-4 shrink-0" />
               </Link>
             </Button>
             <Button size="lg" className="gap-2 w-full h-auto whitespace-normal text-center py-3 px-4" asChild>
