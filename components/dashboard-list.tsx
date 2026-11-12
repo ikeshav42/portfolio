@@ -88,7 +88,7 @@ function DashboardRow({ d }: { d: Dashboard }) {
         onClick={toggle}
         aria-expanded={open}
         aria-controls={panelId}
-        className="mt-3 inline-flex items-center gap-1 rounded-sm text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring motion-reduce:transition-none"
+        className="mt-1 inline-flex min-h-10 items-center gap-1 lg:mt-3 lg:min-h-0 rounded-sm text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring motion-reduce:transition-none"
       >
         {open ? "Hide preview" : "Show preview"}
         <ChevronDown
@@ -136,7 +136,7 @@ export function DashboardList({
           href={showAllHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-1 rounded-sm text-sm font-medium text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          className="mt-1 inline-flex min-h-10 items-center gap-1 lg:mt-3 lg:min-h-0 rounded-sm text-sm font-medium text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         >
           See all dashboards on GitHub <ExternalLink className="h-3 w-3" />
         </a>
