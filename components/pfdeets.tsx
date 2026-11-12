@@ -1,5 +1,7 @@
 import React from "react";
-import { User, GraduationCap, Code, Briefcase, FlaskConical, ExternalLink, Award, LayoutDashboard } from "lucide-react";
+import Link from "next/link";
+import { User, GraduationCap, Code, Briefcase, FlaskConical, ExternalLink, Award, LayoutDashboard, ArrowRight } from "lucide-react";
+import { projects } from "@/lib/projects";
 import { Button } from "@/components/ui/button";
 import { dashboards } from "@/lib/dashboards";
 import { ExpandableText } from "@/components/expandable-text";
@@ -11,24 +13,24 @@ const sortedDashboards = [...dashboards].sort((a, b) => b.date.localeCompare(a.d
 
 const PortfolioDetails = () => {
   return (
-    <div className="h-full overflow-y-auto pr-4 space-y-6">
+    <div className="h-full overflow-y-auto lg:pr-4 space-y-6">
 
       {/* About Me Section */}
-      <section id="about" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
-        <div className="flex items-center gap-2 mb-4 mt-10">
+      <section id="about" tabIndex={-1} className="scroll-mt-16 lg:scroll-mt-8 focus:outline-none">
+        <div className="flex items-center gap-2 mb-4 lg:mt-10">
           <User className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">About</h2>
         </div>
-        <ul className="text-lg text-muted-foreground list-disc pl-5 space-y-1">
+        <ul className="text-base sm:text-lg text-muted-foreground list-disc pl-5 space-y-1">
           <li>CS grad student at UT Arlington (4.0 GPA), focusing on data engineering and analytics.</li>
           <li>Experienced in building reliable pipelines, structured sensor ingestion, and reproducible ML workflows in Python and SQL.</li>
           <li>Shipped BestPick (live Chrome extension comparing variant pricing) and built end-to-end time-series ML models over 619K+ market records.</li>
-          <li>Open to internships and full-time roles (F1 OPT eligible).</li>
+          <li>Available from summer 2027 on F-1 OPT for internships and Full-Time roles.</li>
         </ul>
       </section>
 
       {/* Education Section */}
-      <section id="education" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
+      <section id="education" tabIndex={-1} className="scroll-mt-16 lg:scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4">
           <GraduationCap className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">Education</h2>
@@ -71,69 +73,29 @@ const PortfolioDetails = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
+      <section id="projects" tabIndex={-1} className="scroll-mt-16 lg:scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4">
           <FlaskConical className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">Projects</h2>
         </div>
 
         <div className="space-y-4">
-          {[
-            {
-              name: "Abnormal Move Prediction in S&P 500 Stocks",
-              description:
-                "End-to-end ML pipeline predicting abnormal next-day price moves across 505 S&P 500 stocks (619K+ daily OHLCV rows spanning 5 years), engineering 12 no-lookahead features from price and volume history. Used strict time-based train/validation/test splits to prevent data leakage and tuned hyperparameters on validation F1 across four model families. Random Forest performed best (test AUC 0.72, F1 0.31 at a 2% move threshold); used feature importance and L1 sparsification to identify volatility and price-range features as the strongest signals.",
-              technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Time-Series Validation", "Feature Engineering"],
-              badge: "Published on GitHub",
-              links: [
-                { label: "GitHub", href: "https://github.com/ikeshav42/sp500-abnormal-move-prediction" },
-              ],
-            },
-            {
-              name: "BestPick",
-              subtitle: "Chrome Extension",
-              description:
-                "Built a Chrome extension that scans all variants on an Amazon product page and finds the lowest price across every condition — New, Like New, Very Good, Good, and Acceptable. Designed the architecture first, then built it with Claude as a dev partner. Shipped v1.1 within 24 hours of launch adding support for size-and-color variant grids and bundle listings.",
-              technologies: ["JavaScript", "Chrome Extensions", "Manifest V3", "Async/Concurrency", "HTML Parsing"],
-              badge: "Live on Chrome Web Store",
-              links: [
-                { label: "Chrome Web Store", href: "https://chromewebstore.google.com/detail/bestpick/pgfllnifhaeoglmpdafpmmodfalpckln" },
-                { label: "GitHub", href: "https://github.com/ikeshav42/bestpick-chrome-extension" },
-              ],
-            },
-            {
-              name: "F1 Podium Predictions",
-              description:
-                "Predicts the podium of each 2026 Formula 1 race from qualifying results, recent form, practice pace and weather. For every race it tests 7 scikit-learn models on 43 past races, training on earlier races only, and keeps the best one. The best model picks 2.19 of 3 podium drivers right per race, against 2.07 for “top 3 on the grid”. Each race has its own notebook and a public scorecard, misses included.",
-              technologies: ["Python", "scikit-learn", "XGBoost", "pandas", "OpenF1 API"],
-              badge: "Published on GitHub",
-              links: [
-                { label: "GitHub", href: "https://github.com/ikeshav42/f1-podium-predictions" },
-              ],
-            },
-            {
-              name: "Claude Networking Tracker",
-              description:
-                "A private tracker for LinkedIn connection requests, built to be updated by Claude in one line. It has a blank tracker page, a Claude skill that adds and updates rows with minimal tokens, and a guide to writing short, specific connect notes. Nothing is automated; you send requests yourself and it tracks status and follow-up timing.",
-              technologies: ["HTML", "JavaScript", "Claude skills", "Claude artifacts"],
-              badge: "Published on GitHub",
-              links: [
-                { label: "GitHub", href: "https://github.com/ikeshav42/claude-networking-tracker" },
-              ],
-            },
-            {
-              name: "Label-Efficiency Study on Satellite Imagery",
-              description:
-                "Comparing three pretrained vision backbones (ResNet-50, CLIP, DINOv2) as frozen feature extractors on EuroSAT, measuring how classification accuracy scales with labels-per-class to find where a trained probe overtakes zero-shot transfer. Pipeline validated end-to-end at reduced scale.",
-              technologies: ["Python", "ML", "Neural Nets", "Data Analysis"],
-              badge: "In Progress",
-              links: [],
-            },
-          ].map((project) => (
-            <div key={project.name} className="border-b pb-4 last:border-b-0">
+          {projects.map((project) => (
+            <div key={project.name} className="reveal group border-b pb-4 last:border-b-0">
               <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
                 <div>
-                  <h3 className="font-semibold text-lg">{project.name}</h3>
+                  <h3 className="font-semibold text-lg">
+                    {project.caseStudy ? (
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="rounded-sm underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                      >
+                        {project.name}
+                      </Link>
+                    ) : (
+                      project.name
+                    )}
+                  </h3>
                   {project.subtitle && (
                     <p className="text-sm text-muted-foreground">{project.subtitle}</p>
                   )}
@@ -166,8 +128,15 @@ const PortfolioDetails = () => {
                   </span>
                 ))}
               </div>
-              {project.links.length > 0 && (
+              {(project.links.length > 0 || project.caseStudy) && (
                 <div className="flex flex-wrap gap-2 mt-3">
+                  {project.caseStudy && (
+                    <Button size="sm" variant="outline" className="rounded-full" asChild>
+                      <Link href={`/projects/${project.slug}`}>
+                        Case study <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none" />
+                      </Link>
+                    </Button>
+                  )}
                   {project.links.map((l) => (
                     <Button key={l.label} size="sm" className="rounded-full" asChild>
                       <a href={l.href} target="_blank" rel="noopener noreferrer">
@@ -183,7 +152,7 @@ const PortfolioDetails = () => {
       </section>
 
       {/* BI Dashboards Section */}
-      <section id="dashboards" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
+      <section id="dashboards" tabIndex={-1} className="scroll-mt-16 lg:scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-1">
           <LayoutDashboard className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">BI Dashboards</h2>
@@ -197,7 +166,7 @@ const PortfolioDetails = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
+      <section id="experience" tabIndex={-1} className="scroll-mt-16 lg:scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4">
           <Briefcase className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">Experience</h2>
@@ -205,7 +174,7 @@ const PortfolioDetails = () => {
 
         <div className="space-y-6">
           {/* UTARI — Featured */}
-          <div className="border rounded-lg p-4 bg-secondary/40">
+          <div className="reveal border rounded-lg p-4 bg-secondary/40">
             <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
               <h3 className="font-semibold text-lg">Graduate Research Assistant</h3>
               <span className="text-sm text-muted-foreground whitespace-nowrap">Jan 2026 – May 2026</span>
@@ -223,14 +192,11 @@ const PortfolioDetails = () => {
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
               {[
-                "Computer Vision",
-                "Machine Learning",
-                "Environment Mapping",
                 "Python",
-                "Experimentation",
                 "Data Pipelines",
+                "Computer Vision",
+                "ROS",
                 "Performance Profiling",
-                "JSON Data Export",
               ].map((tech) => (
                 <span
                   key={tech}
@@ -243,7 +209,7 @@ const PortfolioDetails = () => {
           </div>
 
           {/* Sony */}
-          <div className="border-b pb-4 last:border-b-0">
+          <div className="reveal border-b pb-4 last:border-b-0">
             <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
               <h3 className="font-semibold text-lg">Research Assistant</h3>
               <span className="text-sm text-muted-foreground whitespace-nowrap">May 2023 – Dec 2023</span>
@@ -259,7 +225,7 @@ const PortfolioDetails = () => {
               Matplotlib charts directly to Sony representatives and project leads.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              {["Python", "Structured Datasets", "Stakeholder Communication", "Image Processing", "Data Pipelines", "Experimentation", "EDA", "Matplotlib", "IoT Ingestion"].map(
+              {["Python", "Pandas", "Matplotlib", "IoT Ingestion", "EDA"].map(
                 (tech) => (
                   <span
                     key={tech}
@@ -275,7 +241,7 @@ const PortfolioDetails = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
+      <section id="skills" tabIndex={-1} className="scroll-mt-16 lg:scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4">
           <Code className="w-6 h-6" />
           <h2 className="text-2xl font-semibold">Technical Skills</h2>
@@ -326,7 +292,7 @@ const PortfolioDetails = () => {
               ],
             },
           ].map(({ category, skills }) => (
-            <div key={category}>
+            <div key={category} className="reveal">
               <p className="text-sm font-semibold text-muted-foreground mb-1">{category}</p>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
@@ -344,9 +310,9 @@ const PortfolioDetails = () => {
       </section>
 
       {/* Leadership & Activities Section */}
-      <section id="leadership" tabIndex={-1} className="scroll-mt-8 focus:outline-none">
+      <section id="leadership" tabIndex={-1} className="scroll-mt-16 lg:scroll-mt-8 focus:outline-none">
         <div className="flex items-center gap-2 mb-4">
-          <Award className="w-6 h-6" />
+          <Award className="w-6 h-6 shrink-0" />
           <h2 className="text-2xl font-semibold">Leadership &amp; Activities</h2>
         </div>
         <ul className="text-muted-foreground list-disc pl-5 space-y-2">

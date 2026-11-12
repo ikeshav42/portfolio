@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -9,14 +9,27 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const siteTitle = "Keshav Sundararaman · Data Engineering & Analytics";
+const siteDescription =
+  "MS CS student at UT Arlington (4.0 GPA) building data pipelines and ML workflows in Python and SQL. Available from summer 2027 on F-1 OPT.";
 
 export const metadata: Metadata = {
-  title: "Keshav Sundararaman",
-  description: "Keshav Sundararaman - Personal Portfolio",
+  metadataBase: new URL("https://ikeshav42.dev"),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Keshav Sundararaman",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"

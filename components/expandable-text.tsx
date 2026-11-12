@@ -29,7 +29,7 @@ export function ExpandableText({ text, className = "" }: { text: string; classNa
           onClick={() => setExpanded((v) => !v)}
           aria-expanded={expanded}
           aria-controls={id}
-          className="mt-1 rounded-sm text-sm font-medium text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          className="inline-flex min-h-10 items-center lg:mt-1 lg:min-h-0 rounded-sm text-sm font-medium text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         >
           {expanded ? "Show less" : "Read more"}
         </button>
