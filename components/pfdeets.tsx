@@ -64,10 +64,14 @@ const PortfolioDetails = () => {
                 Bachelor of Technology in Computer Science and Engineering
               </h3>
               <p className="text-sm text-muted-foreground">
-                Amrita Vishwa Vidyapeetham | 2020 – 2024
+                Amrita Vishwa Vidyapeetham | Oct 2020 – Jun 2024
               </p>
             </div>
             <p className="text-sm font-medium">CGPA: 8.06 / 10</p>
+            <p className="text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Thesis:</span> Ensemble ML pipelines
+              using Dynamic Structured Grammatical Evolution (DSGE)
+            </p>
           </div>
         </div>
       </section>
@@ -183,18 +187,18 @@ const PortfolioDetails = () => {
               UT Arlington Research Institute (UTARI)
             </p>
             <p className="text-muted-foreground">
-              Built an asynchronous data pipeline to synchronize multi-modal RGB and depth sensor
-              streams from ROS bag files for 3D spatial mapping. Profiled computational
-              bottlenecks across pipeline stages; transitioned detection from GroundingDINO to
-              YOLO-World, boosting frame throughput from under 10 fps to 25 fps (+150%). Built
-              modular CLI tools exporting structured JSON summaries, 2D floor plans, and ROS2
-              Nav2 maps.
+              Computer vision research on 3D spatial mapping from RGB and depth sensor streams.
+              Profiled each stage of the vision pipeline and moved object detection from
+              GroundingDINO to YOLO-World, raising frame throughput from under 10 fps to 25 fps
+              (+150%). Built an asynchronous pipeline to synchronize multi-modal RGB and depth
+              streams from ROS bag files, plus modular CLI tools exporting structured JSON
+              summaries, 2D floor plans, and ROS2 Nav2 maps.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
               {[
-                "Python",
-                "Data Pipelines",
                 "Computer Vision",
+                "Object Detection",
+                "Python",
                 "ROS",
                 "Performance Profiling",
               ].map((tech) => (
