@@ -226,7 +226,7 @@ export const projects: Project[] = [
   },
   {
     slug: "odyssey",
-    name: "Odyssey",
+    name: "Odyssey: Ithaca Bound",
     subtitle: "HackUTA 2026 · Team of 3",
     description:
       "A mobile game that turns a group road trip into a quest. An AI \"Oracle\" (Gemini) plans the route as a chain of islands, the crew joins with a 6-character code and syncs in real time, and each stage clears by geofence when the crew arrives. I owned the game logic: the Expo app scaffold, the arrival watcher, stage progression and Drachma point rewards.",
