@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "Keshav Sundararaman · Data Engineering & Analytics";
+export const alt = "Keshav Sundararaman · Data & AI Engineering";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -24,7 +24,7 @@ export default function OpengraphImage() {
           Keshav Sundararaman
         </div>
         <div style={{ fontSize: 40, color: "#a3a3a3", marginTop: 28 }}>
-          MS CS at UT Arlington · Data Engineering &amp; Analytics
+          MS CS at UT Arlington · Data &amp; AI Engineering
         </div>
         <div style={{ fontSize: 30, color: "#737373", marginTop: 64 }}>ikeshav42.dev</div>
       </div>

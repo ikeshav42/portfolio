@@ -17,7 +17,7 @@ export const Core = () => (
               Keshav Sundararaman
             </h1>
             <p className="text-lg sm:text-2xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-              MS CS at UT Arlington · Data Engineering &amp; Analytics
+              MS CS at UT Arlington · Data &amp; AI Engineering
             </p>
             <p className="text-base text-muted-foreground max-w-md text-left">
               Available from summer 2027 on F-1 OPT for internships and Full-Time roles.

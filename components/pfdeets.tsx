@@ -24,8 +24,9 @@ const PortfolioDetails = () => {
           <h2 className="text-2xl font-semibold">About</h2>
         </div>
         <ul className="text-base sm:text-lg text-muted-foreground list-disc pl-5 space-y-1">
-          <li>CS grad student at UT Arlington (4.0 GPA), focusing on data engineering and analytics.</li>
+          <li>CS grad student at UT Arlington (4.0 GPA), focusing on data engineering, analytics, and AI engineering.</li>
           <li>Experienced in building reliable pipelines, structured sensor ingestion, and reproducible ML workflows in Python and SQL.</li>
+          <li>Building agentic workflows with LLMs, from Claude skills for everyday tooling to an LLM-planned road-trip game with my team at HackUTA 2026.</li>
           <li>Shipped BestPick (live Chrome extension comparing variant pricing) and built end-to-end time-series ML models over 619K+ market records.</li>
           <li>Available from summer 2027 on F-1 OPT for internships and Full-Time roles.</li>
         </ul>
@@ -254,6 +255,15 @@ const PortfolioDetails = () => {
                 "Linux",
                 "Docker",
                 "React / Next.js",
+              ],
+            },
+            {
+              category: "AI Engineering",
+              skills: [
+                "Agentic Workflows",
+                "LLM APIs (Gemini)",
+                "Claude Code & Skills",
+                "Prompt Engineering",
               ],
             },
           ].map(({ category, skills }) => (

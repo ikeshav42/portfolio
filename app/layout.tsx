@@ -9,9 +9,9 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const siteTitle = "Keshav Sundararaman · Data Engineering & Analytics";
+const siteTitle = "Keshav Sundararaman · Data & AI Engineering";
 const siteDescription =
-  "MS CS student at UT Arlington (4.0 GPA) building data pipelines and ML workflows in Python and SQL. Available from summer 2027 on F-1 OPT.";
+  "MS CS student at UT Arlington (4.0 GPA) building data pipelines and ML workflows in Python and SQL, and agentic workflows with LLMs. Available from summer 2027 on F-1 OPT.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ikeshav42.dev"),
